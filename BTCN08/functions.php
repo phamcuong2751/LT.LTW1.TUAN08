@@ -221,7 +221,7 @@ function checkRigister($name, $email, $password, $passwordconfirm)
             $code = strtoupper(bin2hex(random_bytes(4)));
             $hashPassword = password_hash($password, PASSWORD_DEFAULT);
             $user = createUserWithEmail($name, $email, $hashPassword, $code);
-            $link = 'https://ltw-tuan08-18600038.herokuapp.com/activate.php';
+            $link = 'https://ltw-tuan08-18600038.herokuapp.com/BTCN08/activate.php';
             $send = sendEmail($email, 'Kích hoạt tài khoản', 'Vui lòng click vào link ' . $link . '?id=' . $user['id'] . '&code=' . $code);
 
             //không gửi được email
